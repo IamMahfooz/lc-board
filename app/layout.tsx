@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/ui/theme-provider";
 import { SiteFooter } from "@/components/ui/site-footer";
+import { SiteHeader } from "@/components/ui/site-header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +21,12 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
           enableSystem
           disableTransitionOnChange
       >
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </body>
       </ThemeProvider>
-      <SiteFooter />
     </html>
   );
 }
