@@ -1,6 +1,5 @@
 import { ModeToggle } from "./components/mode-toogle";
-import { Button } from "../components/ui/button";
-import { SiteFooter } from "./components/site-footer";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
