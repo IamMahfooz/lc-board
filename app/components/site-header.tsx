@@ -1,8 +1,3 @@
-import Link from "next/link"
-
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
-import { Icons } from "./icons"
 import { MainNav } from "./main-nav"
 import { ModeToggle } from "./mode-toogle"
 import { MobileNav } from "./mobile-nav"

@@ -9,13 +9,13 @@ export const docsConfig: DocsConfig = {
     mainNav: [
         {
             title: "Problems",
-            href: "#",
+            // href: "#",
         },
     ],
     sidebarNav: [
         {
             title: "Getting Started",
-            href: "#",
+            // href: "#",
             items: [
             ],
         },
@@ -23,7 +23,7 @@ export const docsConfig: DocsConfig = {
             title: "Components",
             items: [
             ],
-            href: "#",
+            // href: "#",
         },
     ],
 }
