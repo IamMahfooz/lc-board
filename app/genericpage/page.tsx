@@ -1,7 +1,9 @@
-"use client"
-import { useSearchParams } from "next/navigation"
+'use client'
 
-export default function LcBoard(){
+import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
+
+function Search() {
   const searchParams = useSearchParams()
   const problemId = searchParams.get('problemId')
   console.log("the p-id was",problemId)
@@ -15,5 +17,12 @@ export default function LcBoard(){
       </div>
     </div>
   )
+}
 
+export default function LcBoard(){
+  return(
+  <Suspense fallback={<>Loading...</>}>
+    <Search />
+  </Suspense>
+  )
 }
