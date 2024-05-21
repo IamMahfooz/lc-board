@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
@@ -15,12 +15,7 @@ import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form"
 import ProfileForm from "@/app/components/custom/form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import type { Metadata } from "next"
 
-// export const metadata: Metadata = {
-//   title: "Form-Input",
-//   description: "Input your problem id",
-// };
 const formSchema = z.object({
   problemId: z.string().min(1, {
     message: "Problem ID must be at least 1 characters.",
@@ -38,7 +33,7 @@ export default  function ProblemForm() {
 
   return (
     <>
-      <title>Problem ID form</title>
+      <title>White Board - Form Page</title>
       <div className="flex items-center justify-center min-h-screen ">
         <div
           className="relative pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">

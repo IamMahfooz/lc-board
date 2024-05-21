@@ -14,7 +14,7 @@ export default function ProfileForm(form: any) {
 
   // 2. Define a submit handler.
   return function onSubmit(values: z.infer<typeof formSchema>) {
-    router.push('/genericpage?problemId=' + values.problemId);
+    router.push('/problems/genericpage?problemId=' + values.problemId);
     // console.log(form)
 
     // Do something with the form values.
