@@ -1,8 +1,7 @@
 "use client"
 import { useSearchParams } from "next/navigation"
-
-export default function GenericPage(){
-  const searchParams = useSearchParams()
+import { Suspense } from "react"
+export function Search(){  const searchParams = useSearchParams()
   const problemId = searchParams.get('problemId')
   const pageTitle = `White Board - ${problemId}`
   return (
@@ -17,5 +16,12 @@ export default function GenericPage(){
         </div>
       </div>
     </>
+  )
+}
+export default function GenericPage(){
+  return(
+  <Suspense>
+    <Search/>
+  </Suspense>
   )
 }
