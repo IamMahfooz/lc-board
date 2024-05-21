@@ -1,7 +1,7 @@
 "use client"
 import { useSearchParams } from "next/navigation"
 import { Suspense } from "react"
-export function Search(){  const searchParams = useSearchParams()
+function Search(){  const searchParams = useSearchParams()
   const problemId = searchParams.get('problemId')
   const pageTitle = `White Board - ${problemId}`
   return (
