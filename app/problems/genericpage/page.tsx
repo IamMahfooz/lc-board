@@ -12,7 +12,7 @@ const ExcalidrawWrapper = dynamic(
 
 export default function Page() {
   return (
-    <div className="grid grid-cols-[auto] divide-x">
+    <div className="sticky z-40 h-[calc(100vh-3.5rem)] w-screen">
     <ExcalidrawWrapper />
     </div>
   );

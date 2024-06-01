@@ -9,7 +9,7 @@ const Excalidraw = dynamic(
 
 const ExcalidrawWrapper: React.FC = () => {
   return (
-    <div className="" style={{height:"900px"}}>
+    <div className="h-full w-full">
       <Excalidraw />
     </div>
   );

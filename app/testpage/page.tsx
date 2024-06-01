@@ -8,7 +8,7 @@ function Search(){  const searchParams = useSearchParams()
   return (
     <>
       <title>{pageTitle}</title>
-      <div className="grid grid-cols-[700px_auto] divide-x ">
+      <div className=" grid grid-cols-[30%_70%] divide-x ">
         <div className="flex shadow-xl min-h-screen ">
           {/*<div className="min-h-screen flex items-start justify-start">*/}
           {/*<div className="relative flex flex-col pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:rounded-lg sm:px-10">*/}
@@ -61,7 +61,7 @@ function Search(){  const searchParams = useSearchParams()
             {/*<font face="monospace">&nbsp;</font>time complexity?*/}
           </div>
         </div>
-        <div>
+        <div className="h-full w-full">
           <ExcalidrawWrapper />
         </div>
       </div>
