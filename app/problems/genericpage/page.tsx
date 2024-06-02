@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <div>
       <center>Get Ready to brainstorm !!</center>
-      <div className="fixed z-40 flex h-[calc(100vh-4.5rem)] w-screen">
+      <div className="sticky z-40 flex h-[calc(100vh-4.5rem)] w-screen">
         <ExcalidrawWrapper />
       </div>
     </div>
