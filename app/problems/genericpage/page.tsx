@@ -12,8 +12,11 @@ const ExcalidrawWrapper = dynamic(
 );
 export default function Page() {
   return (
-    <div className="sticky z-40 h-[calc(100vh-3.5rem)] w-screen">
-    <ExcalidrawWrapper />
+    <div>
+      <center>Get Ready to brainstorm !!</center>
+      <div className="fixed z-40 flex h-[calc(100vh-4.5rem)] w-screen">
+        <ExcalidrawWrapper />
+      </div>
     </div>
   );
 }

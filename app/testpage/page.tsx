@@ -18,11 +18,9 @@ function Search(){  const searchParams = useSearchParams()
   return (
     <>
       <title>{pageTitle}</title>
-      <div className=" grid grid-cols-[30%_70%] divide-x ">
-        <div className="flex shadow-xl min-h-screen ">
-          {/*<div className="min-h-screen flex items-start justify-start">*/}
-          {/*<div className="relative flex flex-col pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:rounded-lg sm:px-10">*/}
-          <div className=" px-4 max-w-full overflow-auto" >
+      <div className="grid grid-cols-[30%_70%] divide-x ">
+        <div className="flex shadow-xl">
+          <div className="px-4 container overflow-auto" >
             Problem Statement :
             <br/><br/><br/>
             <p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices
@@ -71,7 +69,7 @@ function Search(){  const searchParams = useSearchParams()
             {/*<font face="monospace">&nbsp;</font>time complexity?*/}
           </div>
         </div>
-        <div className="h-full w-full ">
+        <div className="h-[calc(100vh-3.5rem)] ">
           <ExcalidrawWrapper />
         </div>
       </div>

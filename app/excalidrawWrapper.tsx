@@ -1,7 +1,7 @@
 import {Excalidraw, WelcomeScreen,MainMenu} from "@excalidraw/excalidraw"
 const ExcalidrawWrapper: React.FC = () => {
   return (
-    <div className="h-full w-full">
+    <div className="flex h-full w-full">
       <Excalidraw>
         <WelcomeScreen>
           <WelcomeScreen.Center>
