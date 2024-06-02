@@ -16,17 +16,19 @@ function Search(){  const searchParams = useSearchParams()
   const problemId = searchParams.get('problemId')
   const pageTitle = `White Board - ${problemId}`
   return (
-    <>
+    <div>
       <title>{pageTitle}</title>
-      <div className=" grid grid-cols-[30%_70%] divide-x">
-          <div className="px-4 overflow-auto" >
-            <ProblemStat/>
+      <div className="sticky z-40 flex h-[calc(100vh-3.5rem)] w-screen">
+        <div className="grid grid-cols-[30%_70%] h-full divide-x">
+          <div className="px-4 w-full overflow-auto">
+            <ProblemStat />
           </div>
-           <div className="z-40 h-[calc(100vh-4.5rem)] w-full">
-             <ExcalidrawWrapper />
-           </div>
+          <div className="h-full w-full">
+            <ExcalidrawWrapper />
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -39,12 +41,11 @@ export default function GenericPage() {
 }
 
 
-
-const ProblemStat =function(){
+const ProblemStat = function() {
   return (
     <>
       Problem Statement :
-      <br/><br/><br/>
+      <br /><br /><br />
       <p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices
         of the two numbers
         such that they add up to <code>target</code></em>.</p>
