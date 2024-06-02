@@ -1,7 +1,17 @@
 "use client"
 import { useSearchParams } from "next/navigation"
 import { Suspense } from "react"
-import ExcalidrawWrapper from "@/app/excalidrawWrapper"
+import dynamic from "next/dynamic";
+//
+// // Since client components get prerenderd on server as well hence importing
+// // the excalidraw stuff dynamically with ssr false
+
+const ExcalidrawWrapper = dynamic(
+  async () => (await import("../excalidrawWrapper")).default,
+  {
+    ssr: false,
+  },
+);
 function Search(){  const searchParams = useSearchParams()
   const problemId = searchParams.get('problemId')
   const pageTitle = `White Board - ${problemId}`
@@ -61,7 +71,7 @@ function Search(){  const searchParams = useSearchParams()
             {/*<font face="monospace">&nbsp;</font>time complexity?*/}
           </div>
         </div>
-        <div className="h-full w-full">
+        <div className="h-full w-full ">
           <ExcalidrawWrapper />
         </div>
       </div>
