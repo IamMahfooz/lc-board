@@ -1,7 +1,5 @@
 "use client"
-import { useSearchParams } from "next/navigation"
-import { Suspense } from "react"
-import dynamic from "next/dynamic";
+import dynamic from "next/dynamic"
 //
 // // Since client components get prerenderd on server as well hence importing
 // // the excalidraw stuff dynamically with ssr false
@@ -11,10 +9,11 @@ const ExcalidrawWrapper = dynamic(
   {
     ssr: false,
   },
-);
-function Search(){  const searchParams = useSearchParams()
-  const problemId = searchParams.get('problemId')
-  const pageTitle = `White Board - ${problemId}`
+)
+
+
+export default function GenericPage() {
+  const pageTitle = "404"
   return (
     <div>
       <title>{pageTitle}</title>
@@ -24,19 +23,11 @@ function Search(){  const searchParams = useSearchParams()
             <ProblemStat />
           </div>
           <div className="h-full w-full">
-            <ExcalidrawWrapper />
+            <ExcalidrawWrapper probID={pageTitle} />
           </div>
         </div>
       </div>
     </div>
-  )
-}
-
-export default function GenericPage() {
-  return (
-    <Suspense>
-      <Search />
-    </Suspense>
   )
 }
 
