@@ -13,12 +13,12 @@ const ExcalidrawWrapper = dynamic(
 )
 export default function Page() {
   const params = useParams()
-  const { genericPage } = params
+  const { genericpage } = params
   return (
     <div>
-      <center>Get Ready to brainstorm {genericPage} !!</center>
+      <center>Get Ready to brainstorm {genericpage} !!</center>
       <div className="sticky z-40 flex h-[calc(100vh-4.5rem)] w-screen">
-        <ExcalidrawWrapper />
+        <ExcalidrawWrapper probID={genericpage} />
       </div>
     </div>
   )

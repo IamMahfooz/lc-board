@@ -1,15 +1,16 @@
 import { Excalidraw, WelcomeScreen, MainMenu, serializeAsJSON } from "@excalidraw/excalidraw"
-import { element } from "prop-types"
 import { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types"
 import { AppState, BinaryFiles } from "@excalidraw/excalidraw/types/types"
+// import React from "react"
 
-const ExcalidrawWrapper: React.FC = () => {
+const ExcalidrawWrapper: React.FC<{ probID: string | string[] }> = ({ probID }) => {
   const onchange = (elements: readonly ExcalidrawElement[], appState: AppState, files: BinaryFiles) => {
     const content = serializeAsJSON(elements, appState, files, "local")
-    localStorage.setItem("excalidraw", content)
+    localStorage.setItem(`excalidraw-${probID}`, content)
+    console.log("saved the content")
   }
   const renderInitialData = () => {
-    const content = localStorage.getItem("excalidraw")
+    const content = localStorage.getItem(`excalidraw-${probID}`)
     if (content != null) {
       return JSON.parse(content)
     } else {
