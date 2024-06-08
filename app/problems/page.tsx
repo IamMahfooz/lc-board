@@ -18,7 +18,7 @@ export default function ProblemForm() {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            problemId: "",
+            problemId: "123",
         },
     })
     let onSubmit = ProfileForm(form)

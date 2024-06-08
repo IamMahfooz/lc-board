@@ -11,14 +11,7 @@ const formSchema = z.object({
 
 export default function ProfileForm(form: any) {
     const router = useRouter();
-
-    // 2. Define a submit handler.
     return function onSubmit(values: z.infer<typeof formSchema>) {
         router.push(`/problems/${values.problemId}`)
-        // console.log(form)
-
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(form)
     }
 }
