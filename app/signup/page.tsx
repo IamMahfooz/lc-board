@@ -26,15 +26,15 @@ export default function Home() {
     const onSubmit = SignupProfileForm(form)
     return (
         <div className="flex items-center justify-center min-h-screen ">
-            <title>PB - Login Page</title>
+            <title>PB - Signup Page</title>
             <div
                 className="relative pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
                 <div className="flex space-x-3 px-4">
                     <div
                         className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                            <h1 className="text-xl font-bold text-blue-500 leading-tight tracking-tight md:text-2xl dark:text-white">
-                                Sign in to your account
+                            <h1 className="text-xl font-bold  leading-tight tracking-tight md:text-2xl dark:text-white">
+                                Create an Account
                             </h1>
                             <Form {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
