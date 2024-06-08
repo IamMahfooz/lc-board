@@ -64,20 +64,21 @@ export function MobileNav() {
                     <span className="font-bold">{siteConfig.name}</span>
                 </MobileLink>
                 <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-                    <div className="flex flex-col space-y-3">
-                        {docsConfig.mainNav?.map(
-                            (item) =>
-                                item.href && (
-                                    <MobileLink
-                                        key={item.href}
-                                        href={item.href}
-                                        onOpenChange={setOpen}
-                                    >
-                                        {item.title}
-                                    </MobileLink>
-                                )
-                        )}
-                    </div>
+                    <MobileLink
+                        href="/"
+                        className="flex items-center"
+                        onOpenChange={setOpen}
+                    >
+                        <span className="font-sans">Problem</span>
+                    </MobileLink>
+                    <br/>
+                    <MobileLink
+                        href="/archive"
+                        className="flex items-center"
+                        onOpenChange={setOpen}
+                    >
+                        <span className="font-sans">Archive</span>
+                    </MobileLink>
                 </ScrollArea>
             </SheetContent>
         </Sheet>
