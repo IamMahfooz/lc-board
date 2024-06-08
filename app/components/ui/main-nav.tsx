@@ -20,7 +20,7 @@ export function MainNav() {
             </Link>
             <nav className="flex items-center gap-4 text-sm lg:gap-6">
                 <Link
-                    href="/library"
+                    href="/arhive"
                     className={cn(
                         "transition-colors hover:text-foreground/80",
                         pathname?.startsWith("/themes")
@@ -28,7 +28,7 @@ export function MainNav() {
                             : "text-foreground/60"
                     )}
                 >
-                    Library
+                    Archive
                 </Link>
             </nav>
         </div>
