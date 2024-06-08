@@ -1,16 +1,17 @@
 "use client"
 
 import * as React from "react"
-import Link, { LinkProps } from "next/link"
-import { useRouter } from "next/navigation"
+import Link, {LinkProps} from "next/link"
+import {useRouter} from "next/navigation"
 
-import { siteConfig } from "@/config/site"
-import { docsConfig } from "@/config/docs"
-import { cn } from "@/lib/utils"
-import { Icons } from "./icons"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Sheet,SheetTrigger , SheetContent } from "@/components/ui/sheet"
+import {siteConfig} from "@/config/site"
+import {docsConfig} from "@/config/docs"
+import {cn} from "@/lib/utils"
+import {Icons} from "./icons"
+import {Button} from "@/components/ui/button"
+import {ScrollArea} from "@/components/ui/scroll-area"
+import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
+
 export function MobileNav() {
     const [open, setOpen] = React.useState(false)
 
@@ -59,7 +60,7 @@ export function MobileNav() {
                     className="flex items-center"
                     onOpenChange={setOpen}
                 >
-                    <Icons.logo className="mr-2 h-4 w-4" />
+                    <Icons.logo className="mr-2 h-4 w-4"/>
                     <span className="font-bold">{siteConfig.name}</span>
                 </MobileLink>
                 <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
@@ -119,12 +120,12 @@ interface MobileLinkProps extends LinkProps {
 }
 
 function MobileLink({
-    href,
-    onOpenChange,
-    className,
-    children,
-    ...props
-}: MobileLinkProps) {
+                        href,
+                        onOpenChange,
+                        className,
+                        children,
+                        ...props
+                    }: MobileLinkProps) {
     const router = useRouter()
     return (
         <Link

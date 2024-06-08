@@ -1,18 +1,20 @@
-import { Icons } from "@/app/components/ui/icons"
+import {Icons} from "@/app/components/ui/icons"
 
 export interface NavItem {
-  title: string
-  href?: string
-  disabled?: boolean
-  external?: boolean
-  icon?: keyof typeof Icons
-  label?: string
+    title: string
+    href?: string
+    disabled?: boolean
+    external?: boolean
+    icon?: keyof typeof Icons
+    label?: string
 }
 
 export interface NavItemWithChildren extends NavItem {
-  items: NavItemWithChildren[]
+    items: NavItemWithChildren[]
 }
 
-export interface MainNavItem extends NavItem {}
+export interface MainNavItem extends NavItem {
+}
 
-export interface SidebarNavItem extends NavItemWithChildren {}
+export interface SidebarNavItem extends NavItemWithChildren {
+}
