@@ -13,7 +13,7 @@ const ExcalidrawWrapper = dynamic(
 
 
 export default function GenericPage() {
-    const pageTitle = "404"
+    const pageTitle: string = "404"
     return (
         <div>
             <title>{pageTitle}</title>
