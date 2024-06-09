@@ -12,7 +12,15 @@ const signupFormSchema = z.object({
     email: z.string().email({message: 'Email is required'}),
     password: z.string().min(8, {message: "Password must be at least 8 characters long"}),
     confirmPassword: z.string().min(8, {message: "Password Didn't match"}),
-})
+}).superRefine(({confirmPassword, password}, ctx) => {
+    if (confirmPassword !== password) {
+        ctx.addIssue({
+            code: "custom",
+            message: "The passwords did not match",
+            path: ['confirmPassword']
+        });
+    }
+});
 
 export default function Home() {
     const form = useForm<z.infer<typeof signupFormSchema>>({
