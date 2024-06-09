@@ -30,6 +30,17 @@ export function MainNav() {
                 >
                     Archive
                 </Link>
+                <Link
+                    href="/testpage"
+                    className={cn(
+                        "transition-colors hover:text-foreground/80",
+                        pathname?.startsWith("/themes")
+                            ? "text-foreground"
+                            : "text-foreground/60"
+                    )}
+                >
+                    TestPage
+                </Link>
             </nav>
         </div>
     )
