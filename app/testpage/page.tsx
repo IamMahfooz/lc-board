@@ -13,29 +13,14 @@ const ExcalidrawWrapper = dynamic(
 )
 
 export default function GenericPage() {
-    const params = useParams()
-    const {genericpage} = params
     const [statement11, setStatement11] = useState("")
-    // let result: string
-    // fetch(`https://lcid.cc/${genericpage}`).then((response) => {
-    //     const url = response.url
-    //     const parts = url.split('/');
-    //     result = parts[parts.length - 1] || parts[parts.length - 2];
-    // }).then(() => {
-    //     fetch(`https://alfa-leetcode-api.onrender.com/select?titleSlug=${result}`).then((response) => {
-    //         response.json().then((data) => {
-    //             console.log(data.question)
-    //             setStatement11(data.question)
-    //         })
-    //     });
-    // })
     fetch(`https://alfa-leetcode-api.onrender.com/select?titleSlug=two-sum`).then((response) => {
         response.json().then((data) => {
-            console.log(data.question)
+            // console.log(data.question)
             setStatement11(data.question)
         })
     });
-    const pageTitle: string = `PB - ${genericpage}`
+    const pageTitle: string = `PB - TestPage`
     return (
         <div>
             <title>{pageTitle}</title>
@@ -56,25 +41,3 @@ export default function GenericPage() {
     )
 }
 
-// const ProblemStat = function () {
-//     const params = useParams()
-//     const {genericpage} = params
-//     const [statement11, setStatement11] = useState("")
-//     let slugTitle = fetch(`https://lcid.cc/${genericpage}`).then((response) => {
-//         const url = response.url
-//         fetch(`https://alfa-leetcode-api.onrender.com/select?titleSlug=two-sum`).then((response) => {
-//             response.json().then((data) => {
-//                 console.log(data.question)
-//                 // setStatement11(data.question)
-//             })
-//         });
-//     });
-//
-//     return (
-//         <>
-//             Problem Statement:
-//             <br/><br/><br/>
-//             {parse(statement11)}
-//         </>
-//     )
-// }
