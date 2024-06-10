@@ -64,7 +64,7 @@ export default function GenericPage() {
     }, []);
 
     return (
-        <div className="sticky z-40 w-screen h-screen">
+        <div className="z-40 w-screen h-screen">
             <div className="fixed flex mt-0  h-[calc(100vh-4rem)] w-screen">
                 <div
                     className=" px-4 h-full w-full overflow-auto"
