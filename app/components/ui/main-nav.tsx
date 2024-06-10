@@ -31,7 +31,7 @@ export function MainNav() {
                     Archive
                 </Link>
                 <Link
-                    href="/testpage"
+                    href="/whiteboard"
                     className={cn(
                         "transition-colors hover:text-foreground/80",
                         pathname?.startsWith("/themes")
@@ -39,7 +39,7 @@ export function MainNav() {
                             : "text-foreground/60"
                     )}
                 >
-                    TestPage
+                    WhiteBoard
                 </Link>
             </nav>
         </div>

@@ -7,7 +7,7 @@ export function SiteFooter() {
                 <p className="text-center text-sm leading-loose text-muted-foreground">
                     Built by{" "}
                     <a
-                        href={siteConfig.links.github}
+                        href='https://www.linkedin.com/in/mahfooz-alam-36b93023a/'
                         target="_blank"
                         rel="noreferrer"
                         className="font-medium underline underline-offset-4"

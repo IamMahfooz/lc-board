@@ -79,6 +79,14 @@ export function MobileNav() {
                     >
                         <span className="font-sans">Archive</span>
                     </MobileLink>
+                    <br/>
+                    <MobileLink
+                        href="/whiteboard"
+                        className="flex items-center"
+                        onOpenChange={setOpen}
+                    >
+                        <span className="font-sans">WhiteBoard</span>
+                    </MobileLink>
                 </ScrollArea>
             </SheetContent>
         </Sheet>
