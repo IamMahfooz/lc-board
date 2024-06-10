@@ -19,10 +19,10 @@ export default function GenericPage() {
     fetch(`https://leetcode-question-graphql.onrender.com/problem?id=${genericpage}`).then((response) => {
         response.json().then((data) => {
             // console.log("the received question was", data.question.content)
-            if (data.questions && data.questions.length > 0) {
-                setStatement11(data.question.content)
+            if (data.question == null) {
+                setStatement11("<p>Unable to etch the question . Contact Administrator !</p>")
             } else {
-                setStatement11("<p>Unable to Fetch Question !<br/> Contact Administrator.</p>")
+                setStatement11(data.question.content)
             }
         });
     });
