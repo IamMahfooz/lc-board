@@ -18,8 +18,12 @@ export default function GenericPage() {
     const {genericpage} = params
     fetch(`https://leetcode-question-graphql.onrender.com/problem?id=${genericpage}`).then((response) => {
         response.json().then((data) => {
-            console.log("the received question was", data.question.content)
-            setStatement11(data.question.content)
+            // console.log("the received question was", data.question.content)
+            if (data.questions && data.questions.length > 0) {
+                setStatement11(data.question.content)
+            } else {
+                setStatement11("<p>Unable to Fetch Question !<br/> Contact Administrator.</p>")
+            }
         });
     });
     const pageTitle: string = `PB - TestPage`
