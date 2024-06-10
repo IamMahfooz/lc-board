@@ -1,27 +1,44 @@
 "use client"
 import dynamic from "next/dynamic"
-import {useParams} from "next/navigation"
+import parse from 'html-react-parser';
+import {useState} from 'react';
+import {useParams} from 'next/navigation';
 
-// Since client components get prerenderd on server as well hence importing
-// the excalidraw stuff dynamically with ssr false
-
+// Dynamically import the Excalidraw component without SSR
 const ExcalidrawWrapper = dynamic(
     async () => (await import("../../components/custom/excalidrawWrapper")).default,
     {
         ssr: false,
     },
 )
-export default function Page() {
+
+export default function GenericPage() {
+    const [statement11, setStatement11] = useState("")
     const params = useParams()
     const {genericpage} = params
-    const pageTitle: string = `PB - ${genericpage}`
+    fetch(`https://leetcode-question-graphql.onrender.com/problem?id=${genericpage}`).then((response) => {
+        response.json().then((data) => {
+            console.log("the received question was", data.question.content)
+            setStatement11(data.question.content)
+        });
+    });
+    const pageTitle: string = `PB - TestPage`
     return (
-        <>
+        <div>
             <title>{pageTitle}</title>
-            <center>Get Ready to brainstorm - {genericpage} !!</center>
-            <div className="sticky z-40 flex h-[calc(100vh-4.5rem)] w-screen">
-                <ExcalidrawWrapper probID={genericpage}/>
+            <div className="sticky z-40 flex w-screen">
+                <div className="grid grid-cols-[30%_70%] h-[calc(100vh-4rem)] w-screen divide-x">
+                    <div className="px-4 w-full overflow-auto">
+                        {/*<ProblemStat/>*/}
+                        Problem Statement:
+                        <br/><br/><br/>
+                        {parse(statement11)}
+                    </div>
+                    <div className="h-full w-full">
+                        <ExcalidrawWrapper probID={pageTitle}/>
+                    </div>
+                </div>
             </div>
-        </>
+        </div>
     )
 }
