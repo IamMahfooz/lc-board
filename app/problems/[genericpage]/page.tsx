@@ -32,7 +32,7 @@ export default function GenericPage() {
     }, [genericpage]); // Only run this effect when genericpage changes
 
     // page title
-    const pageTitle: string = `PB - TestPage`;
+    const pageTitle: string = `PB - ${genericpage}`;
 
     // dragger implementation starts
     const [columnWidth, setColumnWidth] = useState<number>(30); // Initial width set to 30%
