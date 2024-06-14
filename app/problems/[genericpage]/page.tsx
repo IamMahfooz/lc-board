@@ -14,7 +14,7 @@ const ExcalidrawWrapper = dynamic(
 
 export default function GenericPage() {
     // statement fetching starts
-    const [statement11, setStatement11] = useState("");
+    const [statement11, setStatement11] = useState("Please wait for the backend server to spin up !!");
     const params = useParams();
     const {genericpage} = params;
 
@@ -70,7 +70,7 @@ export default function GenericPage() {
                     className=" px-4 h-full w-full overflow-auto"
                     style={{width: `${columnWidth}%`}}
                 >
-                    Problem Statement:
+                    <strong>Problem Statement:</strong>
                     <br/><br/><br/>
                     {parse(statement11)}
                 </div>
