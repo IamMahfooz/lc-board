@@ -6,11 +6,9 @@ import {usePathname} from "next/navigation"
 
 import {siteConfig} from "@/config/site"
 import {cn} from "@/lib/utils"
-import {Icons} from "./icons"
 
 export function MainNav() {
-    const pathname = usePathname()
-
+    const pathname = usePathname();
     return (
         <div className="mr-4 hidden md:flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">

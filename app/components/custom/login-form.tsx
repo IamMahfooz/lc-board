@@ -2,8 +2,7 @@
 
 import {z} from "zod"
 import {useRouter} from "next/navigation"
-import {signInWithEmailAndPassword, onAuthStateChanged} from "firebase/auth";
-import {auth} from "../custom/firebase-auth"
+import {loginUser} from '@/app/components/custom/firebase-utils';
 
 
 const loginFormSchema = z.object({
@@ -15,18 +14,7 @@ export default function LoginProfileForm(form: any) {
     const router = useRouter();
     return function onSubmit(values: z.infer<typeof loginFormSchema>) {
         // user sign in
-        signInWithEmailAndPassword(auth, values.email, values.password)
-            .then((userCredential) => {
-                console.log("congrats , user signed in ")
-                // Signed in
-                const user = userCredential.user;
-                // ...
-            })
-            .catch((error) => {
-                console.log("credential do not match !!");
-                const errorCode = error.code;
-                const errorMessage = error.message;
-            });
+        loginUser(values.email, values.password)
         router.push(`/`)
     }
 }
