@@ -87,7 +87,7 @@ export default function Home() {
                                     />
                                     <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                                         Already have an account?&nbsp;&nbsp;
-                                        <Link href="/signin"
+                                        <Link href="/login"
                                               className="font-medium text-blue-500 hover:underline dark:text-primary-500">
                                             Signin Here
                                         </Link>
