@@ -2,7 +2,7 @@
 
 import {z} from "zod"
 import {useRouter} from "next/navigation"
-// import {auth} from "../custom/firebase-auth"
+import {auth} from "../custom/firebase-auth"
 import {createUserWithEmailAndPassword} from "firebase/auth";
 
 
@@ -23,17 +23,20 @@ const signupFormSchema = z.object({
 export default function SignupProfileForm(form: any) {
     const router = useRouter();
     return function onSubmit(values: z.infer<typeof signupFormSchema>) {
-        // createUserWithEmailAndPassword(auth, values.email, values.password)
-        //     .then((userCredential) => {
-        //         // Signed up
-        //         const user = userCredential.user;
-        //         // ...
-        //     })
-        //     .catch((error) => {
-        //         const errorCode = error.code;
-        //         const errorMessage = error.message;
-        //         // ..
-        //     });
+        // user signup
+        createUserWithEmailAndPassword(auth, values.email, values.password)
+            .then((userCredential) => {
+                // Signed up
+                console.log("user signed up !")
+                const user = userCredential.user;
+                console.log(user)
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+            });
         router.push(`/`)
     }
 }
