@@ -42,10 +42,11 @@ export default function GenericPage() {
         isDragging.current = true;
     };
 
-    const handleMouseMove = (event: MouseEvent) => {
+    const handleMouseMove = (event: MouseEvent | TouchEvent) => {
         if (!isDragging.current) return;
-        const newWidth = (event.clientX / window.innerWidth) * 100;
-        if (newWidth >= 10 && newWidth <= 90) {
+        const clientX = (event instanceof MouseEvent) ? event.clientX : event.touches[0].clientX;
+        const newWidth = (clientX / window.innerWidth) * 100;
+        if (newWidth >= 0 && newWidth <= 100) { // Allow collapsing completely
             setColumnWidth(newWidth);
         }
     };
@@ -57,17 +58,21 @@ export default function GenericPage() {
     useEffect(() => {
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseup', handleMouseUp);
+        document.addEventListener('touchmove', handleMouseMove);
+        document.addEventListener('touchend', handleMouseUp);
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseup', handleMouseUp);
+            document.removeEventListener('touchmove', handleMouseMove);
+            document.removeEventListener('touchend', handleMouseUp);
         };
     }, []);
 
     return (
         <div className="z-40 w-screen h-screen">
-            <div className="fixed flex mt-0  h-[calc(100vh-4rem)] w-screen">
+            <div className="fixed flex mt-0 h-[calc(100vh-4rem)] w-screen">
                 <div
-                    className=" px-4 h-full w-full overflow-auto"
+                    className="px-4 h-full w-full overflow-auto"
                     style={{width: `${columnWidth}%`}}
                 >
                     <strong>Problem Statement:</strong>
@@ -77,6 +82,7 @@ export default function GenericPage() {
                 <div
                     className="resizer w-2 bg-gray-300 cursor-col-resize"
                     onMouseDown={handleMouseDown}
+                    onTouchStart={handleMouseDown}
                 />
                 <div
                     className="h-full w-full"
