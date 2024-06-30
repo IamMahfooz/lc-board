@@ -1,6 +1,19 @@
 'use client'
+import {getUserData, setBoardData} from '@/app/components/custom/firebase-utils';
+import {onAuthStateChanged} from 'firebase/auth';
+import {auth} from '@/app/components/custom/firebase-auth';
 
 export default function Library() {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // @ts-ignore
+            console.log("user", user.email)
+            // @ts-ignore
+            getUserData(user.email.toString()).catch(e => {
+                console.error(e)
+            })
+        }
+    });
     return (
         <div className="flex items-center justify-center min-h-screen ">
             <title> PB - Archive </title>
