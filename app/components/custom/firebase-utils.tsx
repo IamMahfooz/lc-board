@@ -1,6 +1,8 @@
-import {auth} from "./firebase-auth"
+import {auth, db} from "./firebase-auth"
 import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'firebase/auth';
 import {Dispatch, SetStateAction} from 'react';
+import {getDoc} from '@firebase/firestore';
+import {collection, getDocs, setDoc, doc} from "firebase/firestore";
 
 
 export function signout(setUserState: Dispatch<SetStateAction<string>>) {
@@ -52,4 +54,48 @@ export function loginUser(email: string, password: string) {
             const errorCode = error.code;
             const errorMessage = error.message;
         });
+}
+
+export async function setBoardData(user: string, pid: string, content: string, sceneVersion: number) {
+    try {
+        await setDoc(doc(db, user, pid), {
+            content: content,
+            // content: "demo",
+            sceneVersion: sceneVersion
+        });
+        console.log("task successfully completed");
+    } catch (e) {
+        console.error('Unsuccessful', e);
+    }
+}
+
+export async function getBoardData(user: string, pid: string, sceneVersion: number) {
+    try {
+        const docRef = doc(db, user, pid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            return docSnap.data()
+            // console.log("Document data:", docSnap.data());
+        } else {
+            // docSnap.data() will be undefined in this case
+            return null
+            // console.log("No such document!");
+        }
+    } catch (error) {
+        console.error('Unable to find doc with id ' + user);
+    }
+}
+
+export async function getUserData(user: string) {
+    try {
+        console.log("fetching started :", user);
+        const docRef = collection(db, user);
+        const docSnaps = await getDocs(docRef);
+
+        const events = docSnaps.docs.map((doc: any) => doc.data())
+        console.log(events);
+    } catch (err) {
+        console.log(err)
+    }
 }
