@@ -1,6 +1,10 @@
 import {Excalidraw, MainMenu, serializeAsJSON, WelcomeScreen, getSceneVersion} from "@excalidraw/excalidraw"
 import {ExcalidrawElement} from "@excalidraw/excalidraw/types/element/types"
 import {AppState, BinaryFiles} from "@excalidraw/excalidraw/types/types"
+import {setBoardData, getBoardData} from '@/app/components/custom/firebase-utils';
+import {onAuthStateChanged} from 'firebase/auth';
+import {auth} from '@/app/components/custom/firebase-auth';
+import {json} from 'node:stream/consumers';
 
 const ExcalidrawWrapper: React.FC<{ probID: string | string[] }> = ({probID}) => {
 
@@ -10,13 +14,19 @@ const ExcalidrawWrapper: React.FC<{ probID: string | string[] }> = ({probID}) =>
             sceneVersion = getSceneVersion(elements)
             const content = serializeAsJSON(elements, appState, files, "local")
             localStorage.setItem(`excalidraw-${probID}`, content)
-            console.log("saved the content with s-v", sceneVersion)
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    console.log("changed to writing board data")
+                    // @ts-ignore
+                    setBoardData(user.email.toString(), probID.toString(), content, sceneVersion).catch((e) => console.error(e))
+                }
+            });
         }
     }
     const renderInitialData = () => {
         const content = localStorage.getItem(`excalidraw-${probID}`)
-        sceneVersion = 0
         if (content != null) {
+            sceneVersion = JSON.parse(content).sceneVersion
             return JSON.parse(content)
         } else {
             return null
