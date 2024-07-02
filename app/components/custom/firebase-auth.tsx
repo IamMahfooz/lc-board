@@ -6,6 +6,7 @@ import {getFirestore} from 'firebase/firestore';
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
+// hide this before making public
 const firebaseConfig = {
     apiKey: "AIzaSyBrlyEKMEOU9hTHYqxV5F09eXq011Np9vM",
     authDomain: "programmer-s-board.firebaseapp.com",
