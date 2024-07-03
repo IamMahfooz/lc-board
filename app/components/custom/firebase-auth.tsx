@@ -8,13 +8,13 @@ import {getFirestore} from 'firebase/firestore';
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 // hide this before making public
 const firebaseConfig = {
-    apiKey: "AIzaSyBrlyEKMEOU9hTHYqxV5F09eXq011Np9vM",
-    authDomain: "programmer-s-board.firebaseapp.com",
-    projectId: "programmer-s-board",
-    storageBucket: "programmer-s-board.appspot.com",
-    messagingSenderId: "562566424848",
-    appId: "1:562566424848:web:1d86fc2c84e7287bdddd95",
-    measurementId: "G-J4K7CT5YCS"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID,
+    measurementId: process.env.MEASUREMENT_ID,
 };
 
 // Initialize Firebease
