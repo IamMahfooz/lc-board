@@ -42,6 +42,6 @@ It has 3 sections : Archive [WIP] , WhiteBoard and Lc-Board ( homepage is the st
 
 ## Glimpses
 
-[WhatsApp Video 2024-07-04 at 1.34.25 AM.mp4](..%2F..%2FDownloads%2FWhatsApp%20Video%202024-07-04%20at%201.34.25%20AM.mp4)
+https://github.com/IamMahfooz/lc-board/assets/92675550/33528593-81d3-4e74-a20a-a7def71c5715
 
 *Contributions are Welcomed !!*
