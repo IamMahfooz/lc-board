@@ -1,41 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped
-with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**Problem :**
+
+1. Have you ever thought of having a platform where you could have solved some Programming questions with writing logic
+   *while you are in an INTERVIEW ?*  
+   I guess the answer is obviously YES ! . (It's always better to deliver your full logic to the interviewer , whether
+   or not you are completely able to solve it.)
+2. According to the present situation , where every software developer goes through the phase of griding their DSA
+   skill , Have you wondered of having a platform where you can write your logic notes and store it in a structured way
+   for revisions ?
+3. I'm lazy adding the many others here :)
+
+**Solution :**  
+A single webApp solves all the problem .
 
 ## Getting Started
 
-First, run the development server:
+Open [https://lc-board-ochre.vercel.app/](https://lc-board-ochre.vercel.app/) with your browser to see the result.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*Main Feature* : From the entered leectode question ID , it generates a partitioned page containing problem statement
+and a whiteBoard that can store your logic notes.  
+The full list of problem solved can be viewed under the archive section.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## WebApp Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+It has 3 sections : Archive [WIP] , WhiteBoard and Lc-Board ( homepage is the start to this feature) .
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and
-load Inter, a custom Google Font.
+1. LC-Board : Just enter your problem-id and it will take you to a page containing a white board and the problem
+   statement of the problem id.
+2. WhiteBoard : It is a simple whiteBoard where you can brainstorm whatever you like !
+3. Archive : This is the archive section of all your notes.
 
-## Learn More
+## Technologies
 
-To learn more about Next.js, take a look at the following resources:
+**Frontend** : Next.js and tailwind-css .
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Backend** : Node.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions
-are welcome!
+1. Fetching Problem Statement : Made use of [Website](lcid.cc) to extract the title-slug of the leetcode question ,then
+   used the Leetcode GRAPHQL API to fetch the problem statement.
 
-## Deploy on Vercel
+**Database** : Google's Firebase .
 
-The easiest way to deploy your Next.js app is to use
-the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+## Glimpses
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[WhatsApp Video 2024-07-04 at 1.34.25 AM.mp4](..%2F..%2FDownloads%2FWhatsApp%20Video%202024-07-04%20at%201.34.25%20AM.mp4)
+
+*Contributions are Welcomed !!*
