@@ -1,47 +1,62 @@
-**Problem :**
+# LC-Board: Your Ultimate Coding Companion
 
-1. Have you ever thought of having a platform where you could have solved some Programming questions with writing logic
-   *while you are in an INTERVIEW ?*  
-   I guess the answer is obviously YES ! . (It's always better to deliver your full logic to the interviewer , whether
-   or not you are completely able to solve it.)
-2. According to the present situation , where every software developer goes through the phase of griding their DSA
-   skill , Have you wondered of having a platform where you can write your logic notes and store it in a structured way
-   for revisions ?
-3. I'm lazy adding the many others here :)
+## Problem
 
-**Solution :**  
-A single webApp solves all the problem .
+1. **Interview Prep**: Ever wanted a platform where you can solve programming questions and write your logic during an
+   interview?
+    - Deliver your full logic to the interviewer, even if you can't completely solve the problem.
+2. **DSA Revision**: Need a place to write and store your logic notes for DSA revision?
+    - A structured way to store and review your notes.
+3. **Other Needs**: Many more features to come!
+
+## Solution
+
+A single web app that addresses all these problems.
 
 ## Getting Started
 
-Open [https://lc-board-ochre.vercel.app/](https://lc-board-ochre.vercel.app/) with your browser to see the result.
+Open [https://lc-board-ochre.vercel.app/](https://lc-board-ochre.vercel.app/) to see the result.
 
-*Main Feature* : From the entered leectode question ID , it generates a partitioned page containing problem statement
-and a whiteBoard that can store your logic notes.  
-The full list of problem solved can be viewed under the archive section.
+### Main Feature
+
+From the entered LeetCode question ID, it generates a partitioned page with the problem statement and a whiteboard to
+store your logic notes. View the full list of problems solved under the archive section.
 
 ## WebApp Overview
 
-It has 3 sections : Archive [WIP] , WhiteBoard and Lc-Board ( homepage is the start to this feature) .
-
-1. LC-Board : Just enter your problem-id and it will take you to a page containing a white board and the problem
-   statement of the problem id.
-2. WhiteBoard : It is a simple whiteBoard where you can brainstorm whatever you like !
-3. Archive : This is the archive section of all your notes.
+1. **LC-Board**: Enter your problem-id to get a page with a whiteboard and the problem statement.
+2. **WhiteBoard**: A simple whiteboard for brainstorming.
+3. **Archive**: An archive section of all your notes.
 
 ## Technologies
 
-**Frontend** : Next.js and tailwind-css .
+**Frontend**: Next.js and Tailwind CSS.
 
-**Backend** : Node.js
+**Backend**: Node.js
 
-1. Fetching Problem Statement : Made use of [Website](lcid.cc) to extract the title-slug of the leetcode question ,then
-   used the Leetcode GRAPHQL API to fetch the problem statement.
+1. **Fetching Problem Statement**: Used [lcid.cc](https://lcid.cc) to extract the title-slug of the LeetCode question
+   and the LeetCode GRAPHQL API to fetch the problem statement.
 
-**Database** : Google's Firebase .
+**Database**: Google's Firebase (cloud) , Browser storage (local) .
 
 ## Glimpses
 
-https://github.com/IamMahfooz/lc-board/assets/92675550/33528593-81d3-4e74-a20a-a7def71c5715
+![Project Demo](https://github.com/IamMahfooz/lc-board/assets/92675550/33528593-81d3-4e74-a20a-a7def71c5715)
 
-*Contributions are Welcomed !!*
+## Contributions
+
+Contributions are welcomed! Feel free to fork the repository and make a pull request.
+
+### How to Contribute
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add new feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
+
+## Join Us
+
+Join our community and help make LC-Board even better! Your contributions and feedback are highly appreciated.
+
