@@ -41,7 +41,7 @@ store your logic notes. View the full list of problems solved under the archive 
 
 ## Glimpses
 
-![Project Demo](https://github.com/IamMahfooz/lc-board/assets/92675550/33528593-81d3-4e74-a20a-a7def71c5715)
+https://github.com/IamMahfooz/lc-board/assets/92675550/33528593-81d3-4e74-a20a-a7def71c5715
 
 ## Contributions
 
