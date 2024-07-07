@@ -10,7 +10,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
     problemId: z.string().min(1, {
-        message: "Problem ID must be at least 1 characters.",
+        message: "Problem ID must be at least 1 character.",
     }),
 });
 
@@ -61,8 +61,12 @@ export default function ProblemForm() {
                         </Form>
                     </div>
                     <div className="text-center mt-4">
+                        <p className="text-gray-600">
+                            Get a partitioned page with the question on one side and a whiteboard on the other. Perfect
+                            for interviews and self-practice!
+                        </p>
                         <Button variant="link" className="text-blue-600"
-                                onClick={() => window.open('https://github.com/IamMahfooz/lc-board', '_blank')}>
+                                onClick={() => window.open('https://lc-board-ochre.vercel.app/', '_blank')}>
                             Explore LC-Board
                         </Button>
                     </div>
