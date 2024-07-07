@@ -60,7 +60,7 @@ export default function ProblemForm() {
                             </form>
                         </Form>
                     </div>
-                    <div className="text-center mt-4">
+                    <div className="text-center mt-4 ">
                         <p className="text-gray-600">
                             Get a partitioned page with the question on one side and a whiteboard on the other. Perfect
                             for interviews and self-practice!
