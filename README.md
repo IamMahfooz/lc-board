@@ -1,6 +1,4 @@
-# LC-Board: Your Ultimate Coding Companion
-
-## Problem
+### Problem
 
 1. **Interview Prep**: Ever wanted a platform where you can solve programming questions and write your logic during an
    interview?
@@ -9,7 +7,7 @@
     - A structured way to store and review your notes.
 3. **Other Needs**: Many more features to come!
 
-## Solution
+### Solution
 
 A single web app that addresses all these problems.
 
