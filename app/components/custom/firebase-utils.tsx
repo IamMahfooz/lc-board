@@ -89,13 +89,15 @@ export async function getBoardData(user: string, pid: string, sceneVersion: numb
 
 export async function getUserData(user: string) {
     try {
-        console.log("fetching started :", user);
+        console.log("fetching started:", user);
         const docRef = collection(db, user);
         const docSnaps = await getDocs(docRef);
 
-        const events = docSnaps.docs.map((doc: any) => doc.data())
+        const events = docSnaps.docs.map((doc: any) => ({id: doc.id, ...doc.data()}));
         console.log(events);
+        return events;
     } catch (err) {
-        console.log(err)
+        console.log(err);
+        // throw err;
     }
 }
