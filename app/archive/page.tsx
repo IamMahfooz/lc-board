@@ -29,7 +29,7 @@ export default function Library() {
             <div className="bg-white shadow-lg rounded-lg overflow-hidden sm:mx-auto sm:max-w-lg w-full">
                 <div className="bg-blue-500 text-white py-4 px-6">
                     <h1 className="text-xl font-semibold">Problem Archive</h1>
-                    <p className="text-sm">Welcome to your problem archive page!</p>
+                    <p className="text-sm">( only for logged in users )</p>
                 </div>
                 <div className="p-6">
                     {headings.length > 0 ? (
@@ -42,7 +42,7 @@ export default function Library() {
                             <tbody>
                             {headings.map((heading, index) => {
                                 const problemId = heading.split('-')[1]; // Extract the ID part
-                                const link = problemId ? `/problems/${problemId}` : '/whiteboard';
+                                const link = problemId ? `/problems/${problemId.slice(1)}` : '/whiteboard';
                                 return (
                                     <tr key={index} className="border-b">
                                         <td className="px-4 py-2">

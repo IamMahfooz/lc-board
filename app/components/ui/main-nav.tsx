@@ -39,6 +39,17 @@ export function MainNav() {
                 >
                     WhiteBoard
                 </Link>
+                <Link
+                    href="https://discord.com/invite/DpDSTD5r"
+                    className={cn(
+                        "transition-colors hover:text-foreground/80",
+                        pathname?.startsWith("/themes")
+                            ? "text-foreground"
+                            : "text-foreground/60"
+                    )}
+                >
+                    Discussions
+                </Link>
             </nav>
         </div>
     )

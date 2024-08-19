@@ -87,6 +87,13 @@ export function MobileNav() {
                     >
                         <span className="font-sans">WhiteBoard</span>
                     </MobileLink>
+                    <MobileLink
+                        href="https://discord.com/invite/DpDSTD5r"
+                        className="flex items-center"
+                        onOpenChange={setOpen}
+                    >
+                        <span className="font-sans">Discussions</span>
+                    </MobileLink>
                 </ScrollArea>
             </SheetContent>
         </Sheet>
