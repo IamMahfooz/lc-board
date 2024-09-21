@@ -87,8 +87,9 @@ export function MobileNav() {
                     >
                         <span className="font-sans">WhiteBoard</span>
                     </MobileLink>
+                    <br/>
                     <MobileLink
-                        href="https://discord.com/invite/DpDSTD5r"
+                        href="https://discord.com/invite/asJbTym54w"
                         className="flex items-center"
                         onOpenChange={setOpen}
                     >
