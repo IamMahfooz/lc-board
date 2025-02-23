@@ -87,14 +87,14 @@ export function MobileNav() {
                     >
                         <span className="font-sans">WhiteBoard</span>
                     </MobileLink>
-                    <br/>
-                    <MobileLink
-                        href="https://discord.com/invite/asJbTym54w"
-                        className="flex items-center"
-                        onOpenChange={setOpen}
-                    >
-                        <span className="font-sans">Discussions</span>
-                    </MobileLink>
+                    {/*<br/>*/}
+                    {/*<MobileLink*/}
+                    {/*    href="https://discord.com/invite/asJbTym54w"*/}
+                    {/*    className="flex items-center"*/}
+                    {/*    onOpenChange={setOpen}*/}
+                    {/*>*/}
+                    {/*    <span className="font-sans">Discussions</span>*/}
+                    {/*</MobileLink>*/}
                 </ScrollArea>
             </SheetContent>
         </Sheet>

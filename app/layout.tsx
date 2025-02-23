@@ -24,7 +24,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         >
             <SiteHeader/>
             {children}
-            <SiteFooter/>
+            {/*<SiteFooter/>*/}
         </ThemeProvider>
         </body>
         </html>

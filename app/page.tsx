@@ -65,10 +65,10 @@ export default function ProblemForm() {
                             Get a partitioned page with the question on one side and a whiteboard on the other. Perfect
                             for interviews and self-practice!
                         </p>
-                        <Button variant="link" className="text-blue-600"
-                                onClick={() => window.open('https://github.com/IamMahfooz/lc-board', '_blank')}>
-                            Explore LC-Board
-                        </Button>
+                        {/*<Button variant="link" className="text-blue-600"*/}
+                        {/*        onClick={() => window.open('https://github.com/IamMahfooz/lc-board', '_blank')}>*/}
+                        {/*    Explore LC-Board*/}
+                        {/*</Button>*/}
                     </div>
                 </div>
             </div>
